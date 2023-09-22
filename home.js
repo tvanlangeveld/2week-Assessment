@@ -21,11 +21,16 @@
     'Welcome back, Andrew'
 */
 
+console.log('===========Problem 1 ===============')
+
 //CODE HERE
 
 
+const greetUser = (username) => {
+    return `Welcome back, ${username}`
+}
 
-
+console.log(greetUser('Tanner'))
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -51,6 +56,19 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+console.log('==========Problem 2============')
+
+ function canWeDeliver(zipCode){
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode ){
+            return 'You are in our delivery zone!'
+        }
+    }
+    return 'Sorry, we do not deliver to that address'
+ }
+
+ console.log(canWeDeliver(85205))
+ console.log(canWeDeliver(84003))
 
 
 /* 
@@ -70,7 +88,20 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
+console.log('============Problem 2 part 2================')
+
 // CODE HERE
+
+const canWeDeliverTwo = (zipcOde) => {
+    if(deliveryAreaZipCodes.includes(zipcOde)){
+        return 'You are in our delivery zone!'
+    } else{
+        return 'Sorry, we do not deliver to that address'
+    }
+}
+
+console.log(canWeDeliverTwo(84003))
+console.log(canWeDeliverTwo(85205))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -84,7 +115,12 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     directly, let's use the `replace` method.
 
     Read on for more instructions.
+
+    
 */
+
+console.log('==========Problem 3=============')
+
 
 const deals = [
     {
@@ -108,7 +144,9 @@ const deals = [
 
 //CODE HERE
 
+let newDeals = deals[0].title.replace('15', '10')
 
+console.log(newDeals)
 
 /*
     The restaurant is going to continue its
@@ -124,3 +162,7 @@ const deals = [
 */
 
 //CODE HERE
+
+let addMonth = deals[1].desc.replace('March', 'April').trim()
+
+console.log(addMonth)
