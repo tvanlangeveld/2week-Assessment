@@ -29,8 +29,21 @@
     user might filter by, like 'gluten-free' or
     'kids'
 */
+console.log('================Problem 1===================')
+//CODE HERE\
 
-//CODE HERE
+const pizza = {
+    name: 'Pepperoni',
+    price: 12,
+    category: 'entree',
+    popularity: 10,
+    rating: 10,
+    tags: ['gluten free', 'kids', 'meat'],
+
+}
+
+
+console.log(pizza)
 
 
 
@@ -42,7 +55,11 @@
     Use dot notation to access the value.
 */
 
+console.log('======Problem 2=========')
+
 //CODE HERE
+
+console.log(pizza.popularity)
 
 
 /*
@@ -53,6 +70,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -64,6 +82,10 @@
 
 //CODE HERE
 
+let {price} = pizza
+
+console.log(price)
+
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +95,10 @@
 */
 
 //CODE HERE
+
+let {category} = pizza
+
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +113,56 @@
     data in some functions that you'll write.
 */
 
+console.log('=============Problem 3=============')
+
 //CODE HERE
+let foodArr = [
+    {
+        name: 'Pepperoni',
+        price: 12,
+        category: 'entree',
+        popularity: 10,
+        rating: 10,
+        tags: ['Not gluten free', 'kids', 'meat'],
+    
+    },
+    {
+        name: 'Cheese',
+        price: 9,
+        category: 'entree',
+        popularity: 7,
+        rating: 7,
+        tags: ['gluten free', 'kids', 'vegitarian'],
+    
+    },
+    {
+        name: 'Hawaiian',
+        price: 15,
+        category: 'entree',
+        popularity: 10,
+        rating: 10,
+        tags: ['gluten free', 'kids', 'meat', 'furit'],
+    
+    },
+    {
+        name: 'Specialty',
+        price: 20,
+        category: 'entree',
+        popularity: 10,
+        rating: 9,
+        tags: ['gluten free', 'adult', 'meat','cheese crust'],
+    
+    },
+    {
+        name: 'Ham & cheese',
+        price: 22,
+        category: 'entree',
+        popularity: 6,
+        rating: 6,
+        tags: ['gluten free', 'adult-only', 'meat'],
+    
+    }
+]
 
 
 
@@ -103,11 +178,15 @@
     your food objects has.
 */
 
+console.log('=================Problem 4==================')
+
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((pizza) => {
+    return pizza.tags.includes('meat')
+})
 
-
+console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -147,8 +226,28 @@
     
     Return the filtered array from the entire function
 */
-
+console.log("==============problem 5===================")
 //CODE HERE
+
+
+
+function filterByProperty(property, number, type) {
+    let newFoodArr = foodArr.filter((element) => {
+     if(type === 'above' && property > number){
+        return element
+     } else if(type === 'below' && property < number){
+        return element
+        }
+    })
+    return newFoodArr
+}
+  
+  
+
+      
+console.log(filterByProperty('price', 10, 'above'))
+   
+
 
 
 /*

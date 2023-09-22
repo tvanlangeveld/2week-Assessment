@@ -35,8 +35,12 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => {
+    return acc + cur.price
+},0)
 
+
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +59,12 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return (cartTotal * tax) + cartTotal - couponValue;
+}
 
+
+console.log(calcFinalPrice(250, 25, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +89,14 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    New Customer 
+    1. name, for this property I will be using a string. I chose this data type becuase it is the best way to provide a name. a resturant needs to know the customers name so they can addresss them or get them there order.
+    2. address, I used a string once again because we are going need multipul pieaces of information and a string is the best way.
+    3. Delivery, i used a boolean. because all we need to know is if the customer wants dilevery or dine in. True or false 
+    4. order, array of strings multipul. We did this because we want to make sure we can give our customers the ability to be flexible with there ordering.
+
+
+
 */
 
 /*
@@ -88,3 +105,11 @@ const cart = [
 */
 
 //CODE HERE
+
+
+const newCustomer = {
+    name:'Tanner',
+    address: '6640 sunset hills court ',
+    delivery: true,
+    order: ['pizza','salad','drink']
+}
